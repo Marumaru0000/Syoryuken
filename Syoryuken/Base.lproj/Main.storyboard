@@ -25,7 +25,7 @@
                                     <color key="baseForegroundColor" systemColor="systemPinkColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="attackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AAo-Py-DBH"/>
+                                    <action selector="attackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qh5-Pv-J5o"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attack1" translatesAutoresizingMaskIntoConstraints="NO" id="Meq-S2-LvX">
