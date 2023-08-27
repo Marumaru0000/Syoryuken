@@ -1,3 +1,12 @@
+//
+//  ViewController.swift
+//  Syoryuken
+//
+//  Created by 丸山航輝 on 2023/08/27.
+//
+/*僕のレポジトリをご覧の方へ*/
+/*個人的にわかりやすかったサイトを貼っておきます！ぜひ参考にしてみてください！*/
+/*https://seeku.hateblo.jp/entry/2016/07/02/204854*/
 import UIKit
 
 class ViewController: UIViewController {
