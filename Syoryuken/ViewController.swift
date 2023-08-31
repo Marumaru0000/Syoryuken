@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var attacks: [UIImageView]!
     var currentAttackIndex = 0
+    var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +24,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func attackButton(_ sender: UIButton) {
-        // 画像の番号を増やす
-        currentAttackIndex += 1
-        
-        // attack20まで行ったらattack1に戻る
-        if currentAttackIndex > 20 {
-            currentAttackIndex = 1
-        }
-        
-        // 新しい画像を設定
-        let imageName = "attack\(currentAttackIndex)"
-        let newImage = UIImage(named: imageName)
-        attacks[0].image = newImage
+        // 既存のタイマーが動作している場合は無効にする
+                timer?.invalidate()
+                
+                // 0.5秒ごとにupdateImageメソッドを呼び出すタイマーを設定
+                timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateImage), userInfo: nil, repeats: true)
     }
+    @objc func updateImage() {
+            // currentAttackIndexをインクリメント
+            currentAttackIndex += 1
+            
+            // currentAttackIndexが20を超えた場合、タイマーを無効にして1にリセット
+            if currentAttackIndex > 20 {
+                timer?.invalidate()
+                currentAttackIndex = 1
+            }
+            
+            // currentAttackIndexに基づいて画像を設定
+            let imageName = "attack\(currentAttackIndex)"
+            if let image = UIImage(named: imageName) {
+                attacks[0].image = image
+            }
+        }
 }
